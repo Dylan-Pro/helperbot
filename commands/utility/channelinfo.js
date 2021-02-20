@@ -7,7 +7,7 @@ module.exports = {
   description: "Gives information about a channel",
   category: "Utility",
   usage: "channelinfo",
-  cooldown: Number,
+  cooldown: 3,
   run: async (client, message, args) => {
 
     const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]) || message.channel;
