@@ -9,7 +9,6 @@ const MuteDB = require('./models/SystemMute.js');
 const prefixSchema = require("./models/prefix")
 const moment = require('moment');
 const path = require('path');
-const Logs = require('./models/setlogs');
 client.snipes = new Map();
 client.editsnipes = new Map();
 client.conf = require('./config/bot');
