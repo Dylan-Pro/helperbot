@@ -178,4 +178,4 @@ client.on("message", async message => {
   }, time + "000");
 });
 
-client.login(process.env.TOKENBOT);
+client.login(process.env.TOKEN);
