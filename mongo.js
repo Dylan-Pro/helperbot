@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const config =  require('./config.json');
-const con = config.mongo;
+require("dotenv").config();
+const con = process.env.MONGO;
 const db = mongoose.connection;
 mongoose.connect(con,{
   useNewUrlParser: true,

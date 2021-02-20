@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const prefixSchema = require("../../models/prefix")
-const prefix = require('../../config.json');
+
 
 module.exports = {
   name: "resetprefix",
@@ -14,6 +14,6 @@ module.exports = {
 
     let a = await prefixSchema.findOneAndDelete({ Guild: message.guild.id });
     if(!a) return message.channel.send("<:HBminus:783351288515657728> | On this server, there is no cuztomized prefix");
-    message.channel.send("<:HBchecked:783351288171593728> | The prefix on the server has been reset, it is now `"+prefix.prefix+"`")
+    message.channel.send("<:HBchecked:783351288171593728> | The prefix on the server has been reset, it is now **`h!`**")
   }
 }

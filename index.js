@@ -1,10 +1,11 @@
 const Discord = require('discord.js'); 
 const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION'], fetchAllMembers: true });
-client.config = require('./config.json');
+require("dotenv").config();
+
 const fs = require("fs");
 const cooldown = new Set();
 require("./mongo.js");
-const prefix = client.config.prefix
+const prefix = process.env.PREFIX
 const MuteDB = require('./models/SystemMute.js');
 const prefixSchema = require("./models/prefix")
 const moment = require('moment');
@@ -179,4 +180,4 @@ client.on("message", async message => {
   }, time + "000");
 });
 
-client.login(client.config.tokenbot);
+client.login(process.env.TOKENBOT);

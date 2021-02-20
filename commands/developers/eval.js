@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const { inspect } = require("util")
-const Developers = require('../../config.json').devs;
 
 module.exports = {
   name: "eval",
@@ -14,8 +13,8 @@ module.exports = {
 
     const command = args.join(" ")
 
-    if (!Developers.includes(message.author.id))
-      return;
+    if(!["577000793094488085", "723158623404032022", "710880777662890095"].includes(message.author.id))
+    return;
 
     if (!command) return message.channel.send("<:HBminus:783351288515657728> | You need to specify something to eval")
 
