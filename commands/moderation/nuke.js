@@ -16,6 +16,8 @@ module.exports = {
                 ch.setParent(message.channel.parent.id);
                 ch.setPosition(message.channel.position);
                 ch.setTopic(message.channel.topic);
+                ch.setNSFW(message.channel.nsfw);
+                ch.setRateLimitPerUser(message.channel.rateLimitPerUser);
                 message.channel.delete();
 
                 const embedChNuked = new Discord.MessageEmbed()
