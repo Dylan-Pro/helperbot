@@ -31,7 +31,7 @@ module.exports = {
             if (channelXD.rateLimitPerUser < 1) return message.channel.send("<:HBminus:783351288515657728> | That chat does not have `slowmode`!");
             await channelXD.setRateLimitPerUser(0);
             const embedSlowmodeOff = new Discord.MessageEmbed()
-                .setDescription(`<#${channelXD.id}> \`slowmode\` has been deactivated!`)
+                .setDescription(`<#${channelXD.id}> **\`slowmode\`** has been deactivated!`)
                 .setColor("RANDOM")
             return message.channel.send(embedSlowmodeOff);
         }
@@ -48,7 +48,7 @@ module.exports = {
         await channelXD.setRateLimitPerUser(result);
 
         const embedSlowmode = new Discord.MessageEmbed()
-            .setDescription(`<#${channelXD.id}> is now in **slow motion** for **${humanize(toMS)}**!`)
+            .setDescription(`<#${channelXD.id}> is now in **\`slow motion\`** for **\`${humanize(toMS)}\`**!`)
             .setColor("RANDOM")
         message.channel.send(embedSlowmode);
 

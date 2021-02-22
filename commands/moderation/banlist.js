@@ -14,7 +14,7 @@ module.exports = {
 
         const fetchBans = message.guild.fetchBans();
 
-        if (fetchBans < 1) return message.channel.send("<:HBminus:783351288515657728> | Has no bannned users!");
+        if (!fetchBans < 1) return message.channel.send("<:HBminus:783351288515657728> | Has no bannned users!");
 
         let i = 0;
         const bannedMembers = message.guild.fetchBans().then(a=>a.map((b)=>`**${++i}** - ${b.user.tag} [${b.user.id}]`));
