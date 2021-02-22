@@ -79,7 +79,7 @@ module.exports = {
                 `**Badges:** ${user.user.flags > 0 ? user.user.flags.toArray().filter((x) => !['VERIFIED_DEVELOPER', 'DISCORD_PARTNER'].includes(x)).map(badge => badges1[badge]).join(' | ') : "Has no badges"} ${fields || ""}`,
                 `**Creation Date:** ${user.user.createdAt.toUTCString().substr(0, 16)} (${checkDays(user.user.createdAt)})`
             ])
-            .addField("<:HBuser:783351289114918973> **`Member Information:`**", [
+            .addField("<:HBuser:783351289114918973> **Member Information:**", [
                 `**Join Server:** ${user.joinedAt.toUTCString().substr(0, 16)} (${checkDays(user.joinedAt)})`,
                 `**Booster:** ${user.premiumSince ? 'I am Boosting <:badge_boost:784078410003644467>' : 'I am not Boosting'}`,
                 `**Nickname:** ${user.nickname || "Has no Nickname"}`,
