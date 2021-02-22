@@ -14,8 +14,9 @@ const usuario = message.mentions.members.first() || message.guild.members.cache.
 let razon = args.slice(1).join(' ') || 'Reason not defined';
 let role = message.guild.roles.cache.find(x => x.name === 'Muted');
 
-if(!message.member.permissions.has('MUTE_MEMBERS')) return message.channel.send('<:HBminus:783351288515657728> | You do not have the necessary permissions to use this command.');
-if(!message.guild.me.permissions.has('MUTE_MEMBERS', 'MANAGE_ROLES')) return message.channel.send('<:HBminus:783351288515657728> | I need the Manage Roles and Mute Members permission.');
+if(!message.member.permissions.has('MUTE_MEMBERS')) return message.channel.send("<:HBminus:783351288515657728> | You don't have `MUTE_MEMBERS` permission!");
+if(!message.guild.me.permissions.has('MUTE_MEMBERS')) return message.channel.send('<:HBminus:783351288515657728> | I need `MUTE_MEMBERS` permission!');
+if(!message.guild.me.permissions.has('MANAGE_ROLES')) return message.channel.send('<:HBminus:783351288515657728> | I need `MANAGE_ROLES` permission!');
 if(!usuario) return message.channel.send('<:HBminus:783351288515657728> | You have not mentioned any user.');
 if(usuario.id === message.author.id) return message.channel.send('<:HBminus:783351288515657728> | You cannot silence yourself.'); 
 if(usuario.id === client.user.id) return message.channel.send('<:HBminus:783351288515657728> | You can not silence me.') 

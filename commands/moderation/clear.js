@@ -11,11 +11,11 @@ module.exports = {
 
 
 if(!message.member.hasPermission("MANAGE_MESSAGES"))
-return message.channel.send('<:HBminus:783351288515657728> | You do not have the necessary permissions to use this command.')
+return message.channel.send("<:HBminus:783351288515657728> | You don't have `MANAGE_MESSAGES` permission!")
 
 
 if(!message.guild.me.permissions.has("MANAGE_MESSAGES")) 
-return message.channel.send('<:HBminus:783351288515657728> | I need the Manage Messages permission.');
+return message.channel.send('<:HBminus:783351288515657728> | I need `MANAGE_MESSAGES` permission!');
 
 try {
 let deleteAmount;

@@ -9,7 +9,7 @@ module.exports = {
   usage: "clearwarns <mention>",
   cooldown: 4,
   run: async (client, message, args) => {
-    if(!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send("<:HBminus:783351288515657728> | I'm sorry, but you don't have the necessary permissions to use that command.");
+    if(!message.member.permissions.has("ADMINISTRATOR")) return message.channel.send("<:HBminus:783351288515657728> | You don't have `ADMINISTRATOR` permission!");
     let user = message.mentions.members.first();
     if(!user) return message.channel.send("<:HBminus:783351288515657728> | Please mention a member")
 
