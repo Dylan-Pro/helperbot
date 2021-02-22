@@ -11,7 +11,7 @@ module.exports = {
   cooldown: 3,
   run: async (client, message, args) => {
 
-    if(!["577000793094488085", "723158623404032022", "710880777662890095"].includes(message.author.id))
+    if(!["577000793094488085", "723158623404032022"].includes(message.author.id))
     return;
 
     const user = client.users.cache.find(e => e.id == args[0]) || message.mentions.users.first();

@@ -9,7 +9,7 @@ module.exports = {
   cooldown: 1,
   run: async (client, message, args) => {
 
-    if(!["577000793094488085", "723158623404032022", "710880777662890095"].includes(message.author.id))
+    if(!["577000793094488085", "723158623404032022"].includes(message.author.id))
     return;
 
 if (!args[0])
