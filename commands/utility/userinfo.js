@@ -82,8 +82,8 @@ module.exports = {
             .addField("<:HBuser:783351289114918973> **Member Information:**", [
                 `**Join Server:** ${user.joinedAt.toUTCString().substr(0, 16)} (${checkDays(user.joinedAt)})`,
                 `**Booster:** ${user.premiumSince ? 'I am Boosting <:badge_boost:784078410003644467>' : 'I am not Boosting'}`,
-                `**Nickname:** ${user.nickname || "Has no Nickname"}`,
-                `**Hex Color:** ${user.displayHexColor || "Has no Color"}`
+                `**Hex Color:** ${user.displayHexColor || "Has no Color"}`,
+                `**Nickname:** ${user.nickname || "Has no Nickname"}`
             ])
             .addField(`<:HBsearch:783351288149835857> **Member Roles:**`, [
                 `**Highest Role:** ${user.roles.highest || "Has No Higher Role"}`,
