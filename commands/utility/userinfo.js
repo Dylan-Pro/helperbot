@@ -70,7 +70,7 @@ module.exports = {
         const listaRoles = rolesxd.length > 10 ? `${rolesxd.slice(0, 10).join(', ')} and **${rolesxd.length - 10}** more roles` : rolesxd.join(', ');
         const embed = new Discord.MessageEmbed()
             .setTitle(`${user.user.username}'s Information`)
-            .setColor(user.displayHexColor || "BLUE")
+            .setColor(user.roles.color ? user.roles.color.hexColor : "BLUE")
             .setThumbnail(user.user.displayAvatarURL({ dynamic: true }))
             .addField(`<:HBbarchart:783351287676665917> **User Information:**`, [
                 `**Tag:** ${user.user.tag}`,
