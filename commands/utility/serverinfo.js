@@ -52,8 +52,30 @@ module.exports = {
     let vc = channels.cache.filter(r => r.type === "voice").size
     let category = channels.cache.filter(r => r.type === "category").size;
 
-    let server = message.guild
-    let a = await message.guild.fetch()
+    const rolesxd = message.guild.roles.cache.filter((x) => x.id !== message.guild.id).map((x) => `${x}`)
+    const listaRoles = rolesxd.length > 12 ? `${rolesxd.slice(0, 12).join(' | ')} and **${rolesxd.length - 10}** more roles` : rolesxd.join(' | ');
+
+    const emojisxd = message.guild.emojis.cache.filter((x) => x.id !== message.guild.id).map((x) => `${x}`)
+    const listaEmojis = emojisxd.length > 12 ? `${emojisxd.slice(0, 12).join(' | ')} and **${emojisxd.length - 10}** more emojis` : emojisxd.join(' | ');
+
+    const rulesID = message.guild.rulesChannelID;
+    let rules1;
+    if (!rulesID) {
+      rules1 = 'Has no rules channel'
+    } else {
+      rules1 = `<#${rulesID}>`
+    };
+
+    const afkID = message.guild.afkChannelID;
+    const timeAFK = message.guild.afkTimeout;
+    let afk1;
+    if (!afkID) {
+      afk1 = 'Has no afk channel'
+    } else {
+      afk1 = `<#${afkID}> (${timeAFK}ms)`
+    };
+
+
     const embed = new Discord.MessageEmbed()
       .setColor("RANDOM")
       .setThumbnail(message.guild.iconURL({ dynamic: true }))
@@ -64,19 +86,21 @@ module.exports = {
         `**Owner:** ${message.guild.owner.user.tag}`,
         `**Region:** ${region[message.guild.region]}`,
         `**Verification Level:** ${verificationLevel[message.guild.verificationLevel]}`,
-        `**Creation Date:** ${message.channel.guild.createdAt.toUTCString().substr(0, 16)} (${checkDays(message.channel.guild.createdAt)})`
+        `**Creation Date:** ${message.channel.guild.createdAt.toUTCString().substr(0, 16)} (${checkDays(message.channel.guild.createdAt)})`,
+        `**Rules Channel:** ${rules1}`,
+        `**AFK Channel:** ${afk1}`
       ])
       .addField("<:HBsearch:783351288149835857> **Server stats:**", [
         `**Users:** ${message.guild.members.cache.size} Total | ${message.guild.members.cache.filter(member => !member.user.bot).size} Member | ${message.guild.members.cache.filter(member => member.user.bot).size} Bot`,
         `**Channels:** ${message.guild.channels.cache.size} Total | ${text} Text | ${vc} Voice | ${category} Category`
       ])
-      .addField("<:HBclipboard:783351287504044082> **Server emojis:**", [
+      .addField("<a:HBcool:813654744845254708> **Server emojis:**", [
         `**Emojis Size:** ${message.guild.emojis.cache.size}`,
-        `**Emojis:** \n${message.guild.emojis.cache.first(10).join(' | ').toString() + ` and **${message.guild.emojis.cache.size - 10}** more emojis` || "Has no emojis"}`
+        `**Emojis:** \n${listaEmojis}`
       ])
-      .addField("<:HBfile:783351289224101928> **Server roles:**", [
+      .addField("<:HBshield:783351288313937991> **Server roles:**", [
         `**Roles Size:** ${message.guild.roles.cache.size}`,
-        `**Roles:** \n${message.guild.roles.cache.first(10).join(' | ').toString() + ` and **${message.guild.roles.cache.size - 10}** more roles` || "Has no roles"}`
+        `**Roles:** \n${listaRoles}`
       ])
       .setFooter("Helper Bot | Utility System", client.user.displayAvatarURL())
     message.channel.send(embed);
