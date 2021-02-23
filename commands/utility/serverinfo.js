@@ -94,7 +94,7 @@ module.exports = {
         `**Users:** ${message.guild.members.cache.size} Total | ${message.guild.members.cache.filter(member => !member.user.bot).size} Member | ${message.guild.members.cache.filter(member => member.user.bot).size} Bot`,
         `**Channels:** ${message.guild.channels.cache.size} Total | ${text} Text | ${vc} Voice | ${category} Category`
       ])
-      .addField("<a:HBcool:813654744845254708> **Server emojis:**", [
+      .addField("<a:cdmusic:781188506981498891> **Server emojis:**", [
         `**Emojis Size:** ${message.guild.emojis.cache.size}`,
         `**Emojis:** \n${listaEmojis}`
       ])
