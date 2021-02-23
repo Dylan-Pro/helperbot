@@ -27,7 +27,7 @@ module.exports = {
     .setThumbnail(client.user.displayAvatarURL())
     .setColor("0x303136")
     .addField(`<:HBbarchart:783351287676665917> **General**`, [
-        "**Developer:** [TheEaterOfSouls#3075](https://github.com/TheEaterOfSouls/helperbot)",
+        "**Developer:** [TheEaterOfSouls#3075](https://github.com/TheEaterOfSouls)",
         `**Commands:** ${client.commands.size}`,
         `**Servers:** ${client.guilds.cache.size}`,
         `**Voice Connections:** ${client.voice.connections.size}`,
