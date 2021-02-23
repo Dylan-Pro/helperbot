@@ -19,6 +19,8 @@ const { Player } = require('discord-player');
 
 client.player = new Player(client);
 
+const DBL = require('dblapi.js');
+client.dbl = new DBL(process.env.DBL, client);
 
 
 //Collections
