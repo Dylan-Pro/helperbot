@@ -78,7 +78,6 @@ module.exports = {
         `**Roles Size:** ${message.guild.roles.cache.size}`,
         `**Roles:** \n${message.guild.roles.cache.first(10).join(' | ').toString() + ` and **${message.guild.roles.cache.size - 10}** more roles` || "Has no roles"}`
       ])
-      .setImage(message.guild.bannerURL({ size: 4096, dynamic: true, format: 'png' }))
       .setFooter("Helper Bot | Utility System", client.user.displayAvatarURL())
     message.channel.send(embed);
 
